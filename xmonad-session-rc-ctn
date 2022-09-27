@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Configure X
+#xsetroot -cursor_name left_ptr &
+#xrdb -merge ~/.Xdefaults &
+#xmodmap ~/.xmodmap
+#setxkbmap -option "ctrl:nocaps" &
+
+# disable beep
+#setterm -blength 0
+
+# Start the system tray
+#stalonetray -c ~/.xmonad/stalonetrayrc --icon-size=20 --kludges=force_icon_size &
+stalonetray -c ~/.xmonad/stalonetrayrc &
+volumeicon &
+
+# startup applications
+xscreensaver -no-splash &
+kupfer --no-splash &
+picom --config $HOME/.xmonad/picom.conf &
+
+signal-desktop &
+thunderbird &
+nextcloud &
+goldendict &
+fcitx5 &
